@@ -37,6 +37,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "e9cd6ea0-dd30-4459-a579-6eedb846fb72"
+      }
+    },
+    "owner": "hse-developers"
   }
 }
