@@ -1,56 +1,53 @@
-# Welcome to your Expo app 👋
+# Time Manager
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Учебное мобильное приложение для тайм-менеджмента. Делаем всемером за неделю, чтобы научиться работать с Git и GitHub.
 
-## Get started
+Стек: React Native + Expo. Данные хранятся на телефоне.
 
-1. Install dependencies
+## Как запустить
 
-   ```bash
-   npm install
-   ```
+1. Установи Node.js (LTS), Git, VS Code и приложение Expo Go на телефон.
+2. Склонируй репозиторий и установи зависимости:
 
-2. Start the app
+       git clone ССЫЛКА_НА_РЕПОЗИТОРИЙ
+       cd time-manager
+       npm install
 
-   ```bash
-   npx expo start
-   ```
+3. Запусти `npx expo start` и отсканируй QR-код в Expo Go (на iPhone — камерой).
 
-In the output, you'll find options to open the app in a
+## Команда и части
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+| # | Часть | Файлы | Кто |
+|---|-------|-------|-----|
+| 1 | Навигация, хранение данных, тема, EAS | src/app/_layout.tsx, src/components/app-tabs.tsx, src/storage.ts, eas.json, app.json | Андрей (тимлид) |
+| 2 | Список задач | src/app/index.tsx, src/components/task-item.tsx | |
+| 3 | Форма задачи: приоритет, дедлайн, категория | src/components/task-form.tsx | |
+| 4 | Таймер Pomodoro | src/app/timer.tsx | |
+| 5 | План на день | src/app/calendar.tsx | |
+| 6 | Статистика | src/app/stats.tsx | |
+| 7 | Настройки и напоминания | src/app/settings.tsx | |
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Правишь только свои файлы. Нужно изменить чужой файл: сначала напиши его владельцу.
 
-## Get a fresh project
+## Правила
 
-When you're ready, run:
+1. В `main` напрямую не пушим. Только через pull request (PR).
+2. Ветка называется `имя/что-делаю`, например `andrey/storage`.
+3. Коммит: короткая фраза о том, что сделано, например «Добавил кнопку удаления задачи».
+4. Один PR = одна фича или одно исправление.
+5. Каждый PR проверяет сосед по кругу: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 1.
+6. Новые библиотеки (`npx expo install ...`) ставим только договорившись с тимлидом.
+7. Код, который не можешь объяснить, в PR не отправляем.
 
-```bash
-npm run reset-project
-```
+## Как работать каждый день
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+    git checkout main
+    git pull
+    npm install
+    git checkout -b имя/что-делаю
+    # ...работаешь, проверяешь на телефоне через npx expo start...
+    git add .
+    git commit -m "Что сделал"
+    git push -u origin имя/что-делаю
 
-### Other setup steps
-
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Потом на GitHub жмёшь **Compare & pull request**, назначаешь ревьюера и ждёшь одобрения.
